@@ -8,9 +8,9 @@
     
         $sql = "INSERT INTO usuariodoador (nome, email, senha) VALUES ('$nome', '$email', '$senha')";
         if ($conn->query($sql) === TRUE) {
-            // Registro bem-sucedido, redirecione para a página de login
+           
             header("Location: Login.html");
-            exit(); // Certifique-se de sair para evitar a execução adicional do código
+            exit(); 
         } else {
             echo "Erro no registro: " . $conn->error;
         }
@@ -27,7 +27,7 @@
         if ($result->num_rows == 1) {
             $row = $result->fetch_assoc();
             if ($senha == $row['senha']) {
-                // Login bem-sucedido, redirecione para a página inicial
+               
                 header("Location: home.html");
                 exit();
             } else {
